@@ -1,0 +1,17 @@
+<form *ngFor="let element of elements">
+  <mat-form-field *ngIf="element.type === 'input'">
+    <!-- [(ngModel)]="element.value"  -->
+    <input matInput [placeholder]="element.placeholder" [formControl]="formGroup.controls[element.field]" >
+    <mat-error *ngIf="formGroup.controls[element.field].invalid">{{ getErrorMessage(formGroup.controls[element.field]) }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="element.type === 'textarea'">
+    <textarea matInput [placeholder]="element.placeholder"></textarea>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="element.type === 'select'">
+    <mat-select [placeholder]="element.placeholder">
+      <mat-option *ngFor="let option of element.options" [value]="option.value">{{ option.viewValue }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
