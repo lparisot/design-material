@@ -1,5 +1,9 @@
-<div>
-  <mat-grid-list [cols]="cols" [rowHeight]="rowHeight">
-    <mat-grid-tile *ngFor="let edi of edis"><app-edi [panel]="panel" [data]="data"></app-edi></mat-grid-tile>
-  </mat-grid-list>
-</div>
+<mat-grid-list [cols]="cols" >
+  <mat-grid-tile
+    *ngFor="let tile of data"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows"
+    [style.background]="tile.color">
+    <app-edi [edi]="tile"></app-edi>
+  </mat-grid-tile>
+</mat-grid-list>

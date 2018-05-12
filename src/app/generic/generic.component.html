@@ -14,4 +14,11 @@
       <mat-option *ngFor="let option of element.options" [value]="option.value">{{ option.viewValue }}</mat-option>
     </mat-select>
   </mat-form-field>
+
+  <mat-form-field *ngIf="element.type === 'date'">
+    <input matInput [matDatepicker]="picker" [placeholder]="element.placeholder">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
 </form>

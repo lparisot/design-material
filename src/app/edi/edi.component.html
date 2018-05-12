@@ -1,12 +1,12 @@
-<mat-expansion-panel>
+<mat-expansion-panel [expanded]="edi.expanded">
   <mat-expansion-panel-header>
     <mat-panel-title>
-      {{ panel.title }}
+      {{ edi.description.title }}
     </mat-panel-title>
     <mat-panel-description>
-      {{ panel.description }}
+      {{ edi.description.description }}
     </mat-panel-description>
   </mat-expansion-panel-header>
 
-  <app-generic [elements]="data"></app-generic>
+  <app-tabs [tabs]="edi.tabs"></app-tabs>
 </mat-expansion-panel>

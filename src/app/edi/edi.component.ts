@@ -6,8 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./edi.component.css']
 })
 export class EdiComponent implements OnInit {
-  @Input() panel;
-  @Input() data;
+  @Input() edi;
 
   constructor() { }
 

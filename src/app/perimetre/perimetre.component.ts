@@ -8,11 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PerimetreComponent implements OnInit {
   @Input() data;
 
-  cols = 2;
-  rows = 2;
-  rowHeight = '2:1';
-  edis = new Array(this.cols*this.rows);
-  panel = {title: 'mon titre', description: 'description'};
+  cols: number = 4;
 
   constructor() { }
 
